@@ -1,52 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <main>
+      <article class="newsletter-card">
+        <picture class="newsletter-card__image">
+          <source
+            srcset="./assets/images/illustration-sign-up-desktop.svg"
+            media="(min-width: 700px)"
+          />
+          <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
+        </picture>
+        <section>
+          <h1 class="newsletter-card__heading">Stay updated!</h1>
 
-  <!-- Sign-up form start -->
+          <p class="newsletter-card__content">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul>
+            <li class="newsletter-card__content">
+              Product discovery and building what matters
+            </li>
+            <li class="newsletter-card__content">
+              Measuring to ensure updates are a success
+            </li>
+            <li class="newsletter-card__content">And much more!</li>
+          </ul>
 
-  Stay updated!
+          <form id="newsletter-card__form" novalidate>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                aria-describedby="email-error"
+                placeholder="email@company.com"
+                required
+              />
+            </div>
+            <p id="email-error" aria-live="polite" class="error-messages"></p>
 
-  Join 60,000+ product managers receiving monthly updates on:
+            <button type="submit" class="submit-button">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </section>
+      </article>
 
-  Product discovery and building what matters
-  Measuring to ensure updates are a success
-  And much more!
+      <article class="success-card">
+        <h1>Thanks for subscribing!</h1>
+        <p class="success-card__content">
+          A confirmation email has been sent to
+          <span class="user-email">ash@loremcompany.com</span>. Please open it
+          and click the button inside to confirm your subscription.
+        </p>
+        <button type="button">Dismiss message</button>
+      </article>
+    </main>
 
-  Email address
-  email@company.com
-
-  Subscribe to monthly newsletter
-
-  <!-- Sign-up form end -->
-
-  <!-- Success message start -->
-
-  Thanks for subscribing!
-
-  A confirmation email has been sent to ash@loremcompany.com. 
-  Please open it and click the button inside to confirm your subscription.
-
-  Dismiss message
-
-  <!-- Success message end -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Farha Shaikh</a>.
+    </footer>
+  </body>
 </html>
