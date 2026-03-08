@@ -34,35 +34,35 @@
           />
           <img src="./assets/images/illustration-sign-up-mobile.svg" alt="" />
         </picture>
-        <section>
+        <section class="newsletter-card__content">
           <h1 class="newsletter-card__heading">Stay updated!</h1>
 
-          <p class="newsletter-card__content">
+          <p class="newsletter-card__text">
             Join 60,000+ product managers receiving monthly updates on:
           </p>
           <ul>
-            <li class="newsletter-card__content">
+            <li class="newsletter-card__text">
               Product discovery and building what matters
             </li>
-            <li class="newsletter-card__content">
+            <li class="newsletter-card__text">
               Measuring to ensure updates are a success
             </li>
-            <li class="newsletter-card__content">And much more!</li>
+            <li class="newsletter-card__text">And much more!</li>
           </ul>
 
-          <form id="newsletter-card__form" novalidate>
+          <form class="newsletter-card__form" novalidate>
             <div class="form-group">
-              <label for="email">Email address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                aria-describedby="email-error"
-                placeholder="email@company.com"
-                required
-              />
+            <label for="email" class="email-text">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              aria-describedby="email-error"
+              placeholder="email@company.com"
+              required
+            />
             </div>
-            <p id="email-error" aria-live="polite" class="error-messages"></p>
+            <p id="email-error" aria-live="polite" class="error-messages hidden"></p>
 
             <button type="submit" class="submit-button">
               Subscribe to monthly newsletter
@@ -71,7 +71,7 @@
         </section>
       </article>
 
-      <article class="success-card">
+      <article class="success-card hidden">
         <h1 class="success-card__heading">Thanks for subscribing!</h1>
         <p class="success-card__content">
           A confirmation email has been sent to
