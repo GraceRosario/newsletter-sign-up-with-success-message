@@ -52,17 +52,28 @@
 
           <form class="newsletter-card__form" novalidate>
             <div class="form-group">
-            <label for="email" class="email-text">Email address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              aria-describedby="email-error"
-              placeholder="email@company.com"
-              required
-            />
+              <div class="email-text-and-error">
+                <label for="email" class="email-text">Email address</label>
+                <p
+                  id="email-error"
+                  aria-live="polite"
+                  class="error-message hidden"
+                ></p>
+              </div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                aria-describedby="email-error"
+                placeholder="email@company.com"
+                required
+              />
             </div>
-            <p id="email-error" aria-live="polite" class="error-messages hidden"></p>
+            <p
+              id="email-error"
+              aria-live="polite"
+              class="error-messages hidden"
+            ></p>
 
             <button type="submit" class="submit-button">
               Subscribe to monthly newsletter

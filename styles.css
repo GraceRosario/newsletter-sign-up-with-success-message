@@ -68,9 +68,11 @@ li::before {
   gap: 1rem;
 }
 
-.email-text {
+.email-text,
+.error-message {
   font-size: 0.875rem;
   font-weight: 700;
+  display: inline-block;
 }
 
 .form-group {
@@ -83,6 +85,7 @@ input,
 button {
   padding: 1rem;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 footer {
@@ -115,6 +118,21 @@ button:focus-visible {
 input:hover,
 input:focus-visible {
   border-color: #000000;
+}
+
+.email-text-and-error {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-error-message {
+  border: 1px solid #ff6742;
+  background-color: #fed8cf;
+}
+
+.error-message,
+.input-error-message {
+  color: #ff6742;
 }
 
 button:hover,
@@ -150,7 +168,7 @@ button:focus-visible {
   }
 
   .newsletter-card__image img {
-    min-height: 300px;
+    max-height: 590px;
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
@@ -168,7 +186,8 @@ button:focus-visible {
     font-size: 2.5rem;
   }
 
-  input, .newsletter-card__text {
+  input,
+  .newsletter-card__text {
     font-size: 1.125rem;
   }
 
