@@ -1,9 +1,8 @@
 const email = document.getElementById("email");
 const emailErrorMsg = document.getElementById("email-error");
 // const submitBtn = document.querySelector(".submit-button");
-const form = document.querySelector(".newsletter-card__form")
+const form = document.querySelector(".newsletter-card__form");
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 
 function validateEmail() {
   if (email.value === "") {
@@ -33,9 +32,10 @@ form.addEventListener("submit", function (e) {
     e.preventDefault();
     console.log("not submitted");
   }
+  else {
+    e.preventDefault();
+  }
 });
-
-
 
 // submitBtn.addEventListener("submit", function (e) {
 //   e.preventDefault();

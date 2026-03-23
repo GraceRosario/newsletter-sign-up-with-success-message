@@ -8,13 +8,33 @@ body {
   font-family: Roboto, sans-serif;
 }
 
+:root {
+  --color-primary: #242742;
+
+  --color-text-primary: #363636;
+  --color-text-secondary: #36384e;
+
+  --color-border: #949494;
+  --color-border-strong: #000000;
+
+  --color-accent: #ff6742;
+  --color-accent-light: #fed8cf;
+  --color-accent-soft: #fccfda;
+  --color-highlight: #ff527b;
+
+  --color-link: #5f9ea0;
+
+  --color-bg: #ffffff;
+}
+
+/* newsletter-card */
+
 .newsletter-card {
   width: 100%;
 }
 
 .newsletter-card__image img {
   width: 100%;
-  /* min-width: 320px; */
 }
 
 .newsletter-card__heading {
@@ -33,11 +53,11 @@ body {
 footer,
 .newsletter-card__content {
   padding: 1.5rem;
-  color: #36384e;
+  color: var(--color-text-primary);
 }
 
 .newsletter-card__content {
-  background-color: #ffffff;
+  background-color: var(--color-bg);
 }
 
 ul {
@@ -85,39 +105,31 @@ input,
 button {
   padding: 1rem;
   border-radius: 8px;
-  cursor: pointer;
-}
-
-footer {
-  text-align: center;
-  font-size: 0.875rem;
-}
-
-footer a {
-  color: cadetblue;
 }
 
 button {
-  color: #ffffff;
+  color: var(--color-bg);
   font-weight: 700;
-  background-color: #242742;
-  border: 1px solid #242742;
+  background-color: var(--color-primary);
+  border: 1px solid var(--color-primary);
   font-size: 0.875rem;
+  cursor: pointer;
 }
 
 input {
-  border: 1px solid #949494;
-  color: #363636;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  cursor: text;
 }
 
 input:focus-visible,
 button:focus-visible {
-  outline: 1px solid #949494;
+  outline: 1px solid var(--color-border);
 }
 
 input:hover,
 input:focus-visible {
-  border-color: #000000;
+  border-color: var(--color-border-strong);
 }
 
 .email-text-and-error {
@@ -126,25 +138,40 @@ input:focus-visible {
 }
 
 .input-error-message {
-  border: 1px solid #ff6742;
-  background-color: #fed8cf;
+  border: 1px solid var(--color-accent);
+  background-color: var(--color-accent-light);
 }
 
 .error-message,
 .input-error-message {
-  color: #ff6742;
+  color: var(--color-accent);
 }
 
 button:hover,
 button:focus-visible {
-  background: linear-gradient(to right, #ff527b, #ff6742);
-  border-color: #ff527b;
-  box-shadow: 10px 10px 10px #f9b3c3;
+  background: linear-gradient(
+    to right,
+    var(--color-highlight),
+    var(--color-accent)
+  );
+  border-color: var(--color-highlight);
+  box-shadow: 10px 10px 10px var(--color-accent-light);
+}
+
+/* footer */
+
+footer {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+footer a {
+  color: var(--color-link);
 }
 
 @media (min-width: 700px) {
   body {
-    background-color: #242742;
+    background-color: var(--color-primary);
     padding: 3rem 2rem;
   }
 
@@ -155,11 +182,13 @@ button:focus-visible {
     justify-content: center;
   }
 
+  /* newsletter-card */
+
   .newsletter-card {
     display: flex;
     flex-direction: row-reverse;
     padding: 2rem;
-    background-color: #ffffff;
+    background-color: var(--color-bg);
     border-radius: 20px;
     gap: 1rem;
     align-items: center;
@@ -195,7 +224,9 @@ button:focus-visible {
     font-size: 1rem;
   }
 
+  /* footer */
+
   footer {
-    color: #ffffff;
+    color: var(--color-bg);
   }
 }
