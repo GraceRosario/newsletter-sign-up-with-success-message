@@ -1,3 +1,5 @@
+/* base */
+
 * {
   padding: 0;
   margin: 0;
@@ -6,13 +8,24 @@
 
 body {
   font-family: Roboto, sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
+
+main {
+  width: 100vw;
+}
+
+/* variables */
 
 :root {
   --color-primary: #242742;
 
-  --color-text-primary: #363636;
-  --color-text-secondary: #36384e;
+  /* --color-text-primary: #36384e; */
+  --color-text-primary: #242742;
+  --color-text-secondary: #363636;
 
   --color-border: #949494;
   --color-border-strong: #000000;
@@ -46,12 +59,9 @@ body {
   font-size: 1rem;
 }
 
-.hidden {
-  display: none;
-}
-
 footer,
-.newsletter-card__content {
+.newsletter-card__content,
+.success-card {
   padding: 1.5rem;
   color: var(--color-text-primary);
 }
@@ -158,6 +168,38 @@ button:focus-visible {
   box-shadow: 10px 10px 10px var(--color-accent-light);
 }
 
+/* success-card */
+
+.success-card {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.success-card__content {
+  display: flex;
+  min-height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  /* color: var(--color-text-primary); */
+}
+
+.success-card__image {
+  width: 60px;
+  height: 60px;
+}
+
+.success-card__button {
+  margin-top: auto;
+}
+
+.user-email {
+  font-weight: 700;
+}
+
 /* footer */
 
 footer {
@@ -169,6 +211,12 @@ footer a {
   color: var(--color-link);
 }
 
+/* utilities */
+
+.hidden {
+  display: none;
+}
+
 @media (min-width: 700px) {
   body {
     background-color: var(--color-primary);
@@ -176,7 +224,8 @@ footer a {
   }
 
   main {
-    min-height: 90vh;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,9 +273,35 @@ footer a {
     font-size: 1rem;
   }
 
+  /* success-card */
+
+  .success-card {
+    width: 500px;
+    max-width: 100%;
+    background-color: var(--color-bg);
+    min-height: 520px;
+    padding: 3rem;
+    border-radius: 20px;
+  }
+
+  .success-card__heading {
+    font-size: 2.5rem;
+  }
+
+  .success-card__content {
+    min-height: 350px;
+    gap: 2.5rem;
+  }
+
   /* footer */
 
   footer {
     color: var(--color-bg);
+  }
+
+  /* utilities */
+
+  .hidden {
+    display: none;
   }
 }
