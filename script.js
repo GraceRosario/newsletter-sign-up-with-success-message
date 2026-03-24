@@ -1,8 +1,11 @@
 const email = document.getElementById("email");
 const emailErrorMsg = document.getElementById("email-error");
-// const submitBtn = document.querySelector(".submit-button");
 const form = document.querySelector(".newsletter-card__form");
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const displayEmail = document.querySelector(".user-email");
+const successCard = document.querySelector(".success-card");
+const newsletterCard = document.querySelector(".newsletter-card");
+const dismissButton = document.querySelector(".success-card__button");
 
 function validateEmail() {
   if (email.value === "") {
@@ -17,7 +20,7 @@ function validateEmail() {
   }
 }
 
-email.addEventListener("input", function (e) {
+email.addEventListener("input", function () {
   if (validateEmail()) {
     emailErrorMsg.classList.add("hidden");
     email.classList.remove("input-error-message");
@@ -28,32 +31,23 @@ email.addEventListener("input", function (e) {
 });
 
 form.addEventListener("submit", function (e) {
-  if (!validateEmail()) {
-    e.preventDefault();
-    console.log("not submitted");
-  }
-  else {
-    e.preventDefault();
-  }
+  e.preventDefault();
+
+  if (!validateEmail()) return;
+
+  // below statements only runs when the above if statement is false.
+  // runs only when validateEmail() returns true
+
+  newsletterCard.classList.add("hidden");
+  successCard.classList.remove("hidden");
+  displayEmail.innerText = email.value;
 });
 
-// submitBtn.addEventListener("submit", function (e) {
-//   e.preventDefault();
-// })
-
-// email.addEventListener("input", function (e) {
-
-// if (email.value === "") {
-//   emailErrorMsg.classList.remove("hidden");
-//   emailErrorMsg.innerText = "Please complete the field";
-//   email.classList.add("input-error-message");
-// } else if (!emailPattern.test(email.value)) {
-//   emailErrorMsg.classList.remove("hidden");
-//   emailErrorMsg.innerText = "Valid email required";
-//   email.classList.add("input-error-message");
-// } else {
-//   emailErrorMsg.classList.add("hidden");
-//   emailErrorMsg.innerText = "";
-//   email.classList.remove("input-error-message");
-// }
-// });
+dismissButton.addEventListener("click", function () {
+  successCard.classList.add("hidden");
+  newsletterCard.classList.remove("hidden");
+  email.value = "";
+  emailErrorMsg.innerText= "";
+  emailErrorMsg.classList.add("hidden");
+  email.classList.remove("input-error-message");
+});
